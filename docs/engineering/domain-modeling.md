@@ -79,6 +79,7 @@ No, and there is no plan for a skill that does. A domain language you do not und
 - It refuses to write an ADR for something you could undo tomorrow, and says which of the three tests failed.
 - New entries define what a thing *is* in one or two sentences and name the words you are giving up under `_Avoid_`.
 - It quotes your code back at you when your code and your sentence disagree.
+- It talks you out of a new term as often as into one, when the new thing turns out to be a field on an existing one.
 - `GLOSSARY.md` gets shorter as often as it gets longer.
 
 ## Where it fits

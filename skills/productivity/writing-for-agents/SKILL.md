@@ -1,9 +1,11 @@
 ---
 name: writing-for-agents
-description: Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.
+description: Levers for writing agent-facing documents: anything that instructs an agent at run time. Use when creating or editing a skill, an AGENTS.md or CLAUDE.md, or a reference file reached by a pointer; when wording a pointer itself, such as a skill description or an AGENTS.md line naming a doc; or when a document misfires, because the agent skipped material, rushed a step, or the file has sprawled.
 ---
 
 Reference for writing any document an agent consumes: a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer. The packaging differs; the writing does not: the same levers make each one predictable, since the agent takes the same _process_ every run rather than producing the same output.
+
+A document is **agent-facing** when it instructs the agent: it shapes what the agent does on a run. `SKILL.md` and the reference files beside it, `AGENTS.md`, `CLAUDE.md`, and the pointers themselves (a skill description, an `AGENTS.md` line naming a doc) all qualify. The artifacts those documents govern do not: a glossary, an ADR, a research file, a README and a docs page record facts, and are graded by how they read. A change touching both kinds is two jobs held to two standards.
 
 When the document you're writing is a skill, read [`SKILL-MECHANICS.md`](SKILL-MECHANICS.md) for frontmatter, invocation choice, and router skills.
 

@@ -49,6 +49,10 @@ When the user uses a term that conflicts with the existing language in `GLOSSARY
 
 When the user uses vague or overloaded terms, propose a precise canonical term. "You're saying 'account': do you mean the Customer or the User? Those are different things."
 
+### Split only what earns its own term
+
+A concept that exists to explain, qualify, identify, or describe another one is part of that one. It earns its own term when it has behaviour, relationships, a lifecycle, or reuse of its own. "You've named City and Postcode separately: does anything act on a City by itself, or do they travel with the Address?"
+
 ### Discuss concrete scenarios
 
 When domain relationships are being discussed, stress-test them with specific scenarios. Invent scenarios that probe edge cases and force the user to be precise about the boundaries between concepts.
