@@ -12,14 +12,14 @@ Type `/writing-for-agents`, or the agent reaches for it on its own when you're c
 
 Reach for it by hand for everything else an agent reads: your docs, specs and [tickets](https://www.aihero.dev/ai-coding-dictionary/ticket), system and [AFK](https://www.aihero.dev/ai-coding-dictionary/afk) prompts. The test is one question: does an agent read this? It does not matter how the agent gets the document: a pointer names it, a human pastes it, or it is in the repo. To find out what a codebase contains, use [grill-with-docs](https://aihero.dev/skills-grill-with-docs). This reference controls how a document reads, not what it knows.
 
-## The two loads
+## Context load and cognitive load
 
-The central idea is two budgets that every document and pointer spends:
+The central idea is two kinds of load that every document and pointer adds:
 
 - **Context load**: the cost of always-loaded material on the agent's window: an `AGENTS.md` line, a skill description, anything sitting in context every [turn](https://www.aihero.dev/ai-coding-dictionary/turn) whether or not it fires.
 - **Cognitive load**: the cost to you of remembering which documents exist and when to reach for each. You are the index. Do not try to minimise this cost, because it is the price of human agency.
 
-Once you think in these two loads, most authoring decisions (split or don't, inline or disclose, point or push) become the same trade made in different places.
+Once you think in context load and cognitive load, most authoring decisions (split or don't, inline or disclose, point or push) become the same trade made in different places.
 
 ## The levers
 

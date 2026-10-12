@@ -19,9 +19,9 @@ A pointer does two jobs: state what the material is, and list the **branches** t
 - **One trigger per branch.** Synonyms that rename a single branch are one branch written twice; collapse them and keep only genuinely distinct branches.
 - **Cut identity the body already carries.**
 
-## Load budgets
+## Context load and cognitive load
 
-Every document and pointer you add spends one of two budgets:
+Every document and pointer you add costs one of two kinds of load:
 
 - **Context load** is the cost of always-loaded material on the agent's window: an `AGENTS.md` line, a skill description, anything sitting in context every turn, spending tokens and attention whether or not it fires.
 - **Cognitive load** is the cost on the human: which documents exist and when to reach for each. The human is the index. Not a cost to minimise: it is the price of human agency; spend it where human judgement matters, remove it where it does not.
@@ -55,7 +55,7 @@ The strongest criteria are both checkable and exhaustive.
 
 ## Splitting content
 
-Splitting a document spends one of the two loads, so split only when it is earned:
+Splitting a document adds context load or cognitive load, so split only when it is earned:
 
 - **By sequence**: split a run of steps where the post-completion steps tempt the agent to rush the one in front of it. Keeping them out of view drives more legwork on the current task. Beware the reverse: merging sequences exposes each step's later steps to what follows, inviting premature completion.
 - **By invocation**, skill-specific: see [`SKILL-MECHANICS.md`](SKILL-MECHANICS.md).
