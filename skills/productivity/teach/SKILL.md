@@ -50,6 +50,8 @@ A lesson is the main thing you produce: the unit in which knowledge and skills r
 
 A lesson should be **beautiful**, with clean, readable typography and layout, since the user will return to these later to review. Think Tufte.
 
+Before drafting a lesson's text, call the Skill tool with "writing" and write the lesson to its standards.
+
 The lesson should be short, and completable very quickly. Learners' working memory is very small, and we need to stay within it. But each lesson should give the user a single tangible win that they can build on. It should be directly tied to the mission, and should be in the user's zone of proximal development.
 
 If possible, open the lesson file for the user by running a CLI command.
