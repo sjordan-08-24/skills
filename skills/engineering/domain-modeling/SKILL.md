@@ -1,19 +1,27 @@
 ---
 name: domain-modeling
-description: Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a GLOSSARY.md, or recording or editing an ADR.
+description: Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a glossary.yaml or ubiquitous-language.yaml, or recording or editing an ADR.
 ---
 
 # Domain Modeling
 
-Actively build and sharpen the project's domain model as you design. This is the *active* discipline: challenging terms, inventing edge-case scenarios, and writing the glossary and decisions down the moment they crystallise. (Merely *reading* `GLOSSARY.md` for vocabulary is not this skill: that's a one-line habit any skill can do. This skill is for when you're changing the model, not just consuming it.)
+Actively build and sharpen the project's domain model as you design. This is the *active* discipline: challenging terms, inventing edge-case scenarios, and writing the terms and decisions down the moment they crystallise. (Merely *reading* the term files for vocabulary is not this skill: that's a one-line habit any skill can do. This skill is for when you're changing the model, not just consuming it.)
 
 ## File structure
+
+Terms live in two YAML files, split by kind:
+
+- **`glossary.yaml`**: the repo's domain terms, the concepts unique to this project.
+- **`ubiquitous-language.yaml`**: general developer vocabulary, one canonical word per concept, so the user and every agent mean the same thing.
+
+Route each term with the test in [TERMS-FORMAT.md](./TERMS-FORMAT.md).
 
 Most repos have a single context:
 
 ```
 /
-├── GLOSSARY.md
+├── glossary.yaml
+├── ubiquitous-language.yaml
 ├── docs/
 │   └── adr/
 │       ├── 0001-event-sourced-orders.md
@@ -21,29 +29,31 @@ Most repos have a single context:
 └── src/
 ```
 
-If a `GLOSSARY-MAP.md` exists at the root, the repo has multiple contexts. The map points to where each one lives:
+A repo with multiple contexts gives each context its own `glossary.yaml` beside its code. `ubiquitous-language.yaml` stays single at the root, because developer vocabulary spans contexts. Search for `glossary.yaml` to find the contexts:
 
 ```
 /
-├── GLOSSARY-MAP.md
+├── ubiquitous-language.yaml
 ├── docs/
 │   └── adr/                          ← system-wide decisions
 ├── src/
 │   ├── ordering/
-│   │   ├── GLOSSARY.md
+│   │   ├── glossary.yaml
 │   │   └── docs/adr/                 ← context-specific decisions
 │   └── billing/
-│       ├── GLOSSARY.md
+│       ├── glossary.yaml
 │       └── docs/adr/
 ```
 
-Create files lazily: only when you have something to write. If no `GLOSSARY.md` exists, create one when the first term is resolved. If no `docs/adr/` exists, create it when the first ADR is needed.
+When multiple contexts exist, infer which one the current topic relates to. If unclear, ask.
+
+Create files lazily: only when you have something to write. If a term file is missing, create it when the first term that belongs in it is resolved. If no `docs/adr/` exists, create it when the first ADR is needed.
 
 ## During the session
 
-### Challenge against the glossary
+### Challenge against the term files
 
-When the user uses a term that conflicts with the existing language in `GLOSSARY.md`, call it out immediately. "Your glossary defines 'cancellation' as X, but you seem to mean Y. Which is it?"
+When the user uses a term that conflicts with an entry in `glossary.yaml` or `ubiquitous-language.yaml`, or a word an entry lists under `rejected`, call it out immediately. "Your glossary defines 'cancellation' as X, but you seem to mean Y. Which is it?"
 
 ### Sharpen fuzzy language
 
@@ -61,11 +71,11 @@ When domain relationships are being discussed, stress-test them with specific sc
 
 When the user states how something works, check whether the code agrees. If you find a contradiction, surface it: "Your code cancels entire Orders, but you just said partial cancellation is possible. Which is right?"
 
-### Update GLOSSARY.md inline
+### Update the term files inline
 
-When a term is resolved, update `GLOSSARY.md` right there. Don't batch these up: capture them as they happen. Use the format in [GLOSSARY-FORMAT.md](./GLOSSARY-FORMAT.md).
+When a term is resolved, add or update its entry in the file it belongs in, right there. Don't batch these up: capture them as they happen. Use the formats in [TERMS-FORMAT.md](./TERMS-FORMAT.md).
 
-`GLOSSARY.md` should be totally devoid of implementation details. Do not treat `GLOSSARY.md` as a spec, a scratch pad, or a repository for implementation decisions. It is a glossary and nothing else.
+Keep both files to definitions and naming rulings. An entry's `identity` and `enforced_at` name where a term shows up and where its rules hold; record how the code works in the code, its specs, and its ADRs.
 
 ### Offer ADRs sparingly
 
