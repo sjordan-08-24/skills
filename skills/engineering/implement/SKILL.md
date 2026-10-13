@@ -14,4 +14,4 @@ Run typechecking regularly, single test files regularly, and the full test suite
 
 Once done, call the Skill tool with "code-review" to review the work.
 
-Commit your work to the current branch.
+Before drafting the commit message, call the Skill tool with "writing" and follow its standards. Commit your work to the current branch.

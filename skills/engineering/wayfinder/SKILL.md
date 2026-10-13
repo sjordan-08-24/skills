@@ -16,6 +16,8 @@ Wayfinder is **planning** by default: each ticket resolves a decision, and the m
 
 Every map and ticket is an issue, so it has a **name**: its title. In everything the human reads (narration, the map's Decisions-so-far), refer to it by that name, never by a bare id, number, or slug. A wall of `#42, #43, #44` is illegible; names read at a glance. The id and URL don't vanish; a name wraps its link, but they ride _inside_ the name, never stand in for it.
 
+Before drafting a map, ticket, or resolution comment, call the Skill tool with "writing" and follow its standards.
+
 ## The Map
 
 The map is a single issue on this repo's issue tracker, labelled `wayfinder:map`, the canonical artifact. Its tickets are child issues of the map.
